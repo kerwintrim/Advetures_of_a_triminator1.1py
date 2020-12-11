@@ -1,0 +1,108 @@
+print("Welcome to my first game! ")
+name = input("What is your name? ")
+age = int(input("What is your age? "))
+
+health = 20
+
+if age >= 16:
+   print("You are old enough to play! ")
+
+if age <= 16:
+  print("You are not allowed to play...")
+
+wants_to_play = input("Do you want to play? ").lower()
+if wants_to_play == "yes":
+   
+   print("You are starting with ", health,"health")
+print("Let's play!") 
+    
+
+  
+left_or_right = input("First choice....Left or Right  (left/right)?) ")
+if left_or_right == "left":
+       ans = input("Nice, you follow the path and reach a lake.... Do you swim  across or go around (across/around)? ")
+
+if left_or_right == "right":
+  ans = input("You fell down and lost...")
+       
+if ans == "around":
+         print("You went around and reached the other side of the lake")
+         
+elif ans == "across":
+           print("You managed to get across, but were bit by a fish and lost 5 health. ")
+           health  -= 5
+
+ans = input("You notice a house and a river, which do you go to(river/house))? ")
+if ans == "house":
+  print("You go to the house and are greeted by the owner... He does not like you and you lose 5 health.")
+  health -= 5
+
+elif ans == "river":
+  print("You narrowly managed to cross the river and were stung by a jellyfish...You lost 10 health")
+  health -= 10
+
+  ans = input("You reach a forest and begin walking through it. You hear large footsteps approaching, although a mini earthquake is happening. A wild bear appears behind you. What do you do(play dead/run)? ")
+  if ans == "play dead":
+    print("The bear sniffs you and then passes you by. You walk through the forest until you approach a narrow bridge.")
+
+  elif ans == "run":
+    print("The bear chases you until you arrive at a narrow bridge. The bear watches you and then turns away.")
+
+    ans = input("You can either cross the bridge or look for another way across. What will you do (cross the bridge/look for alternative)? ")
+    if ans == "cross the bridge":
+      print("As you cross the bridge, it begins to sway from left to right. A strong gust of wind blows and you fall into the river and lose.")
+      health -= 20
+
+    elif ans == "look for alternative":
+      print("You walk on the outskirts of the forest and stumble upon an encampment.")
+
+      ans = input("You scan the area and realize the camp is abandoned. You walk around and discover some objects that can be used as weapons on the floor. You then pick a weapon")
+
+      weapon = input("Pick a weapon(metal rod/slingshot) ")
+
+      if weapon == "metal rod":
+        print("You climb a tree to get some mangoes, you successfully get ,mangoes but fall in the process. You lose 5 health but gain 10 health after you eat the mangoes.")
+        health -= 5
+        health += 10
+
+    elif weapon == "slingshot":
+      print("You see the mangoes on the tree and use your slingshot to shoot down the mangoes. You are successful and you eat the fruit. You gain 10 health.")
+      health += 10
+
+      ans = input ("You continue looking through the encampment and discover a knife and a rope. You equip it to yourself and make your way back to the bridge. The wind is no longer blowing heavily and the bridge is still. You look to the side and realize you can use the knife and rope to rappel down to where the river is. What do you choose (cross the bridge/rappel down)? ")
+
+      if ans =="cross the bridge":
+        print("You reach halfway and the wind slowly begins to blow. You hastily make your way across the bridge.")
+
+      elif ans =="rappel down":
+        print("You rappel down and reach the river. You look around trying to discover a way to get across.You discover a small wodden boat down the river bank. You enter the boat and the river currents are really strong. The current pushes you down a waterfall and you die.")
+        health -= 20
+
+        ans = input("You continue walking and reach to the roadside. You realize civilzation is near and scan the area for nearby people. You shout for help but no one answers. Instead, a pack of wolves appear. You begin to walk backwards slowly as the pack of wolves inches closer to you. Do you (run/use slingshot/use metal rod/climb a tree)? ")
+        
+        if ans =="run":
+          print("You run but trip on a rock. the wolves get you and you lose.")
+          health -= 20
+
+        elif ans =="use slingshot":
+          print("You hit one wolf, but the other wolves swarm you. You lose....")
+          health -= 20
+
+        elif ans =="use metal rod":
+          print("You swing your rod, the wolves stay at bay for a moment. They then rush all at once. You hit one but the others get you. You lose....")
+          health -= 20
+
+        elif ans =="climb a tree":
+          print("You climb a tree and the wolves eventually leave. A stranger passes by and offers you a ride. You are safe.")
+
+      
+
+
+
+  if health <= 0:
+    print("You now have 0 health and you lost the game...")
+  else:
+    print("You have survived....You win!!!")
+else:
+  print("You fell in the river and lost....")
+
